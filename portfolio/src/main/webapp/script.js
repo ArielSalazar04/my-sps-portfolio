@@ -16,13 +16,7 @@
  * Adds a random greeting to the page.
  */
 function addRandomGreeting() {
-  const greetings =
-      ['I love coding and learning about technology.', 'I love computer science and mathematics'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quotes = ["/images/quote1.jpg", "/images/quote2.png", "/images/quote3.jpg"];
+  document.getElementById("myImage").src = quotes[Math.floor(Math.random() * quotes.length)];
+  // Picks a random quote and adds it to the page
 }
