@@ -20,3 +20,9 @@ function addRandomGreeting() {
   document.getElementById("myImage").src = quotes[Math.floor(Math.random() * quotes.length)];
   // Picks a random quote and adds it to the page
 }
+
+function getData() {
+  fetch('/data').then(response => response.text()).then((msg) => {
+    document.getElementById('quote-container').innerText = msg;
+  });
+}
