@@ -23,34 +23,6 @@ function addRandomGreeting() {
 
 function getValues() {
   fetch('/data').then(response => response.json()).then((msg) => {
-      var messages = String(msg);
-      messages = messages.split(",");
-      const commentList = document.getElementById("demo");
-      commentList.innerHTML = '';
-      commentList.appendChild(
-          createListElement('Value1: ' + messages[0]));
-      commentList.appendChild(
-          createListElement('Value2: ' + messages[1]));
-      commentList.appendChild(
-          createListElement('Value3: ' + messages[2]));
-  });
-}
-
-/*function getValues() {
-  fetch('/data').then(response => response.json()).then((messages) => {
-    const commentList = document.getElementById('quote-container');
-    commentList.innerHTML = '';
-    commentList.appendChild(
-        createListElement('Value1: ' + messages.get(0)));
-    commentList.appendChild(
-        createListElement('Value2: ' + messages.get(1)));
-    commentList.appendChild(
-        createListElement('Value3: ' + messages.get(2)));
-  });
-}*/
-
-function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  return liElement;
+      document.getElementById("demo").innerHTML = msg.Value1 + "," + msg.Value2 + "," + msg.Value3;
+  })
 }
