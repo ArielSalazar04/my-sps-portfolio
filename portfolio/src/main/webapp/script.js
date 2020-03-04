@@ -21,8 +21,8 @@ function addRandomGreeting() {
   // Picks a random quote and adds it to the page
 }
 
-function getData() {
-  fetch('/data').then(response => response.text()).then((msg) => {
-    document.getElementById('quote-container').innerText = msg;
-  });
+function getValues() {
+  fetch('/data').then(response => response.json()).then((msg) => {
+      document.getElementById("demo").innerHTML = msg.Value1 + "," + msg.Value2 + "," + msg.Value3;
+  })
 }

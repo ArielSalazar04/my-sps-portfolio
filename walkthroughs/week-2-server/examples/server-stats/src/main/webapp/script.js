@@ -21,6 +21,7 @@ function getServerStats() {
     // reference its fields to create HTML content
 
     const statsListElement = document.getElementById('server-stats-container');
+    statsListElement.innerHTML = stats;
     statsListElement.innerHTML = '';
     statsListElement.appendChild(
         createListElement('Start time: ' + stats.startTime));
