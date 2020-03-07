@@ -90,8 +90,18 @@
           </tr>
       </table>
   </body>
-  <body>
-      <div id="quote-container"></div>
-      <p id="demo" onclick="getValues()"> Click to fetch the values </p>
-  </body>
+  <br>
+  <table>
+      <hr style="border-top: double;" />
+      <body>
+          <form action="/data" method="POST">
+          <section> Enter a comment: </section><br/>
+          <textarea name="text-input"></textarea>
+          <input type="submit">
+          </form>
+      </body>
+      <br><br>
+      <div id="comment" onclick="getValues()" > To view all comments, click here </div>
+      <br>
+  </table>
 </html>

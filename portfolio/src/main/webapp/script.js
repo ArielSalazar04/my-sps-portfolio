@@ -22,7 +22,21 @@ function addRandomGreeting() {
 }
 
 function getValues() {
-  fetch('/data').then(response => response.json()).then((msg) => {
-      document.getElementById("demo").innerHTML = msg.Value1 + "," + msg.Value2 + "," + msg.Value3;
+  fetch("/data").then(response => response.json()).then((msg) => {
+    ul = document.createElement("ul");
+    document.getElementById("comment").appendChild(ul);
+    
+    msg.forEach(function (item) {
+        let li = document.createElement("li");
+        ul.appendChild(li);
+        li.innerHTML += item;
+    });
+
   })
+}
+
+function createListElement(text) {
+  const liElement = document.createElement("li");
+  liElement.innerText = text;
+  return liElement;
 }

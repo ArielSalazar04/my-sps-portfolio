@@ -20,31 +20,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-  static ArrayList<String> messages = new ArrayList<String>(
-      Arrays.asList("Yesterday", "Today", "Tomorrow")
-  );
+  private List comments = new ArrayList(Arrays.asList());
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("application/json;");
-    String json = "{";
-    json += "\"Value1\": ";
-    json += "\"" + messages.get(0) + "\"";
-    json += ", ";
-    json += "\"Value2\": ";
-    json += "\"" + messages.get(1) + "\"";
-    json += ", ";
-    json += "\"Value3\": ";
-    json += "\"" + messages.get(2) + "\"";
-    json += "}";
-    response.getWriter().println(json);
+    response.getWriter().println(makeJsonUsingGson(comments));
   }
-  /*private String makeJsonUsingGson(Object obj){
-      return new Gson().toJson(obj);
-  }*/
+  @Override
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String text = getParameter(request, "text-input", "");
+    comments.add(text);
+    response.setContentType("text/html;");
+    response.getWriter().println(comments);
+    response.sendRedirect("/index.html");
+    //response.sendRedirect("/?authuser=0&environment_id=default");
+  }
+  private String getParameter(HttpServletRequest request, String name, String defaultValue) {
+    String value = request.getParameter(name);
+    if (value == null) {
+      return defaultValue;
+    }
+    return value;
+  }
+  private String makeJsonUsingGson(Object obj){
+      return new GsonBuilder().create().toJson(obj);
+  }
 }

@@ -44,3 +44,20 @@ img {
   border: 1px dotted black;
   margin: 0px 0px 15px 20px;
 }
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+textarea {
+    width: 900px;
+    height: 100px;
+    font-size: 1em;
+}
+input {
+    font-size: 1em;
+}
+one-comment {
+    font-size: 1em;
+}
