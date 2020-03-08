@@ -11,7 +11,9 @@
 #quote-container {
   margin-top: 20px;
 }
-
+#list-of-comments {
+  list-style-type: decimal-leading-zero;
+}
 .center-justified {
     margin: 0 auto;
     width: 40em;
@@ -59,5 +61,5 @@ input {
     font-size: 1em;
 }
 one-comment {
-    font-size: 1em;
+    font-size: 1.2em;
 }

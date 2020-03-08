@@ -101,7 +101,11 @@
           </form>
       </body>
       <br><br>
-      <div id="comment" onclick="getValues()" > To view all comments, click here </div>
+
+      <body onload="getComments()">
+          <one-comment> List of all comments: </one-comment>
+          <ul id="list-of-comments" ></ul>
+      </body>
       <br>
   </table>
 </html>
