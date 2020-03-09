@@ -11,7 +11,9 @@
 #quote-container {
   margin-top: 20px;
 }
-
+#list-of-comments {
+  list-style-type: decimal-leading-zero;
+}
 .center-justified {
     margin: 0 auto;
     width: 40em;
@@ -43,4 +45,21 @@ img {
   float: right;
   border: 1px dotted black;
   margin: 0px 0px 15px 20px;
+}
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+textarea {
+    width: 900px;
+    height: 100px;
+    font-size: 1em;
+}
+input {
+    font-size: 1em;
+}
+one-comment {
+    font-size: 1.2em;
 }
