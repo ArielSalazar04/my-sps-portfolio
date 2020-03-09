@@ -8,7 +8,22 @@
   </head>
   <body>
     <div id="content">  
-      <h1 align="center">Ariel Salazar</h1>
+
+      <table style="width:100%" border="0">
+          <tr>
+              <th align="left">
+                  <a href="https://www.linkedin.com/in/ariel-salazar-16a17716b"> LinkedIn </a>
+              </th>
+              <th align="middle">
+                  <h1 align="center">Ariel Salazar</h1>
+              </th>
+              <th align="right">
+                  <a href="https://github.com/ArielSalazar04/"> GitHub </a>
+              </th>
+          </tr>
+      </table>
+      <br>
+
       <section> Introduction: </section>
       <div class="paragraph">
       <p> Welcome to my portfolio page! My name is Ariel Salazar and I am thrilled 
@@ -77,35 +92,42 @@
           typically an urban one. 
       </p>
       <br> 
-      <hr style="border-top: double;" />
-      <br>
-      <table style="width:100%">
-          <tr>
-              <th align="middle">
-                  <a href="https://www.linkedin.com/in/ariel-salazar-16a17716b"> LinkedIn </a>
-              </th>
-              <th align="middle">
-                  <a href="https://github.com/ArielSalazar04/"> GitHub </a>
-              </th>
-          </tr>
-      </table>
   </body>
   <br>
   <table>
       <hr style="border-top: double;" />
+      
       <body>
-          <form action="/data" method="POST">
-          <section> Enter a comment: </section><br/>
-          <textarea name="text-input"></textarea>
-          <input type="submit">
-          </form>
-      </body>
-      <br><br>
+          <right-side> 
+                <br><br><br><br>
+                <div> Language of comment list: </div>
 
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="zh">Chinese</option>
+                    <option value="es">Spanish</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ar">Arabic</option>
+                </select>
+
+                <button onclick="requestTranslation()"> Translate </button>
+
+            </right-side>
+      </body>
       <body onload="getComments()">
-          <one-comment> List of all comments: </one-comment>
-          <ul id="list-of-comments" ></ul>
+            <form action="/data" method="POST">
+                <section> Enter a comment: </section><br/>
+                <textarea name="text-input"></textarea>
+                <br><br>
+                <input type="submit">
+            </form>
+            
+            <br><br>
+            <one-comment> Comment list: </one-comment>
+            <ul id="list-of-comments" ></ul>
+
       </body>
       <br>
   </table>
+  <!--<<script> temp() </script>-->
 </html>

@@ -21,6 +21,10 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
+
 import com.google.sps.data.CommentClass;
 
 import java.io.IOException;
@@ -32,33 +36,41 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Enumeration;
+
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-  private int numberOfComments = 0;
+  private long numberOfComments = 0;
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    String languageCode = request.getQueryString().split("=")[1];
+    Translate translate = TranslateOptions.getDefaultInstance().getService();
+    
     Query query = new Query("Comment").addSort("id", SortDirection.ASCENDING);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
 
     List<CommentClass> comments = new ArrayList<>();
+    
     for (Entity entity : results.asIterable()) {
-      long id = entity.getKey().getId();
-      String text = (String) entity.getProperty("text");
-      comments.add(new CommentClass(id, text));
+        long id = entity.getKey().getId();
+        String text = (String) entity.getProperty("text");
+
+        Translation translation = translate.translate(text, Translate.TranslateOption.targetLanguage(languageCode));
+        text = translation.getTranslatedText();
+
+        comments.add(new CommentClass(id, text));
     }
     numberOfComments = comments.size();
 
     Gson gson = new Gson();
-    String jsonString = "[";
-    for (CommentClass commentObject: comments){
-        jsonString += gson.toJson(commentObject) + ",";
-    }
-    jsonString = jsonString.substring(0, jsonString.length() - 1) + "]";
 
-    response.setContentType("application/json;");
+    String jsonString = gson.toJson(comments);
+
+    response.setContentType("application/json; charset=UTF-8");
+    response.setCharacterEncoding("UTF-8");
     response.getWriter().println(jsonString);
   }
   @Override
@@ -82,4 +94,4 @@ public class DataServlet extends HttpServlet {
     }
     return value;
   }
-}
+} 

@@ -21,13 +21,21 @@ function addRandomGreeting() {
   // Picks a random quote and adds it to the page
 }
 
-function getComments() {
-  fetch('/data').then(response => response.json()).then((comments) => {
+function getComments(languageCode="en") {
+    const params = new URLSearchParams();
+    params.append('languageCode', languageCode);
+
+    fetch("/data?" + params.toString()).then(response => response.json()).then((comments) => {
     const commentListElement = document.getElementById('list-of-comments');
     comments.forEach((singleComment) => {
         commentListElement.appendChild(newComment(singleComment));
     })
-  });
+    });
+}
+
+function requestTranslation() {
+    document.getElementById('list-of-comments').innerText = "";
+    getComments(document.getElementById('language').value);
 }
 
 function newComment(comment) {
