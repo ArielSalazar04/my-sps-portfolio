@@ -11,7 +11,9 @@
 #quote-container {
   margin-top: 20px;
 }
-
+#list-of-comments {
+  list-style-type: decimal-leading-zero;
+}
 .center-justified {
     margin: 0 auto;
     width: 40em;
@@ -29,10 +31,11 @@ section{
     font-size: x-large;
 }
 table, th, td {
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
   border-spacing: 10px;
 }
+
 div.paragraph {
   text-indent: 50px;
 }
@@ -51,13 +54,17 @@ img {
 	float: right;
 }
 textarea {
-    width: 900px;
+    width: 400px;
     height: 100px;
     font-size: 1em;
 }
-input {
-    font-size: 1em;
+one-comment, option{
+    font-size: 12pt;
 }
-one-comment {
-    font-size: 1em;
+languages {
+    font-size: 1.2em;
+}
+right-side {
+    float: right;  
+    width: 400px;
 }
