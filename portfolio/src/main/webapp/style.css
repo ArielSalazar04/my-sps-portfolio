@@ -1,8 +1,68 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
+#main-body{
+    background: rgb(250, 250, 250);
 }
+
+#background {
+    background: rgb(250, 250, 250);
+    width: 1400px;
+    border: 15px solid rgb(85, 85, 155);
+    padding: 50px;
+    margin: 20px;
+    align-content: center;
+    border-radius: 10px;
+}
+
+#main-header{
+    font-size: 36pt;
+    text-decoration: underline;
+    text-indent: 70px;
+}
+
+#main-table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+#directory{
+    background: rgb(250, 250, 250);
+    width: 160px;
+    /* border: 5px solid rgb(85, 85, 155); */
+    padding: 50px;
+    margin: 20px;
+    align-content: right;
+}
+
+#content {
+    background: rgb(250, 250, 250);
+    width: 650px;
+    /* border: 5px solid rgb(85, 85, 155); */
+    padding: 50px;
+    margin: 20px;
+    align-content: left;
+}
+
+#my-image{
+    content:url("/images/self_image.jpg");
+    height:375px;
+    width:235px;
+    /* border: 5px solid rgb(85, 85, 155); */
+}
+
+#link{
+    font-size: 14pt;
+}
+
+#input-box{
+    width: 650px;
+    height: 200px;
+    resize: none;
+}
+
+
+
+
+
+
 
 #greeting-container {
   margin-top: 20px;
@@ -22,10 +82,7 @@
     display: flex;
     justify-content: space-between;
 }
-h1 {
-    border-bottom: 5px solid black;
-    font-size: 300%;
-}
+
 section{
     font-style: bold;
     font-size: x-large;
@@ -36,9 +93,7 @@ table, th, td {
   border-spacing: 10px;
 }
 
-div.paragraph {
-  text-indent: 50px;
-}
+
 p, li{
     line-height: 1.75;  
 }

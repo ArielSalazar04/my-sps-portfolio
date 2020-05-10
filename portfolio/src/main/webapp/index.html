@@ -1,133 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Ariel Salazar: Portfolio Page</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <div id="content">  
-
-      <table style="width:100%" border="0">
-          <tr>
-              <th align="left">
-                  <a href="https://www.linkedin.com/in/ariel-salazar-16a17716b"> LinkedIn </a>
-              </th>
-              <th align="middle">
-                  <h1 align="center">Ariel Salazar</h1>
-              </th>
-              <th align="right">
-                  <a href="https://github.com/ArielSalazar04/"> GitHub </a>
-              </th>
-          </tr>
-      </table>
-      <br>
-
-      <section> Introduction: </section>
-      <div class="paragraph">
-      <p> Welcome to my portfolio page! My name is Ariel Salazar and I am thrilled 
-          to be a part of the SPS program of 2020. I was born and raised in New York 
-          my entire life and I am also of Mexican descent. I can speak fluent English 
-          and Spanish, and this is something that I value highly because I enjoy 
-          communicating and making connections with people from both communities. As of 
-          now, I am a sophomore in college with computer science as my major and mathematics 
-          as my minor.
-      </p>
-      </div>
-      <div class="paragraph">
-      <p> I consider myself a hard-working student with hopes and dreams of obtaining 
-          a position in a software engineering or data analytics career. I have a huge 
-          passion for logic, mathematics, and problem-solving, and I love to challenge
-          myself. I have a year and a half of experience as a programmer, and coding has 
-          quickly become one of my hobbies. While I consider myself competitive, I also 
-          enjoy learning new things everyday about technology. I am also easy-going, friendly, 
-          and supportive of my friends and peers. I believe that having a positive mental 
-          attitude is one of the essentials to get out of the comfort zone, and so I apply 
-          this rule to my endeavors and also encourage others to do the same.
-      </p>
-      </div>
-      <hr style="border-top: double;" />
-
-      <section> <br> My Projects: </section>
-      <ol type = 1>
-          <li> Lotería Mexicana (September 2019 - Present) <br>
-              The game Lotería Mexicana, translated as "Mexican Lottery", is a game similar to bingo 
-              and traditionally played in Mexico. I coded this game as an iOS app and I taught 
-              myself how to code in Swift 3.0. While coding this project, I learned about 
-              the Main Storyboard, View Controllers, UI Objects, and other fundamental concepts 
-              to iOS app developing. I have committed this project to my GitHub. 
-          </li>
-          <br>
-          <li> Puppy Database with Python and MySQL (October 2019 - February 2020) <br>
-              This personal project connects Python with MySQL using MySQL Connector. 
-              Throughout the dates specified, I participated in a side business, 
-              that sold puppies, by storing all the data into a database in MySQL and using Python
-              to make changes in the database and to perform basic statistics. 
-          </li>
-      </ol>
-      <hr style="border-top: double;" />
-      <br>
-
-      <section> <br> Favorite Quotes: <img src = "/images/quote1.jpg" id="myImage" height="200" width="200"> </section>
-      <div class="paragraph">
-          <p> 
-              The following pictures show a few of my favorite quotes and life lessons.<br> 
-              These are my favorites because they are relevant to my current life and to some <br>
-              of my previous experiences. Click the button below to get one of the three quotes. <br>
-          </p>
-      </div>
-      <button onclick="addRandomGreeting()" > Next quote </button>
-      <div id="greeting-container"></div>
-      <br><br>
-      <hr style="border-top: double;" />
-      
-      <section> <br> Random Blog: <img src="/images/parkour.jpeg" height="200" width="350"> </section>
-      <p> To learn how to safety jump off a height like a ninja, 
-          <a href = "https://parkouredu.org/parkour-landing-kinematics/"> click here </a> <br>
-          This link redirects to a website named ParkourEDU and explains one of the 
-          fundamentals moves of parkour: the side-roll. If you do not know already, 
-          parkour is a "freedom of movement" activity that consists of using one's 
-          running, jumping, and climbing skills to move rapidly in an environment, 
-          typically an urban one. 
-      </p>
-      <br> 
-  </body>
-  <br>
-  <table>
-      <hr style="border-top: double;" />
-      
-      <body>
-          <right-side> 
-                <br><br><br><br>
-                <div> Language of comment list: </div>
-
-                <select id="language">
-                    <option value="en">English</option>
-                    <option value="zh">Chinese</option>
-                    <option value="es">Spanish</option>
-                    <option value="hi">Hindi</option>
-                    <option value="ar">Arabic</option>
-                </select>
-
-                <button onclick="requestTranslation()"> Translate </button>
-
-            </right-side>
-      </body>
-      <body onload="getComments()">
-            <form action="/data" method="POST">
-                <section> Enter a comment: </section><br/>
-                <textarea name="text-input"></textarea>
-                <br><br>
-                <input type="submit">
-            </form>
-            
-            <br><br>
-            <one-comment> Comment list: </one-comment>
-            <ul id="list-of-comments" ></ul>
-
-      </body>
-      <br>
-  </table>
-  <!--<<script> temp() </script>-->
+    <head>
+        <meta charset="UTF-8">
+        <title>Ariel Salazar: Portfolio Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <div id="background">
+        <table id="main-table">
+            <tr>
+                <h1 id="main-header"> Ariel Salazar's Portfolio </h1>
+            </tr>
+            <tr>
+                <th align="left">
+                    <div id="directory"> 
+                        <h1>Directory</h1>
+                        <h2>Portfolio Links</h2>
+                        <a id="link" href="index.html"> Introduction </a><br>
+                        <a id="link" href="about-me.html"> About Me </a><br>
+                        <h2>My Projects</h2>
+                        <a id="link" href="https://github.com/ArielSalazar04/" target="_blank"> GitHub </a><br>
+                        <h2>Contact Me</h2>
+                        <a id="link" href="https://www.linkedin.com/in/ariel-salazar-16a17716b" target="_blank"> LinkedIn </a><br>
+                        <a id="link" href="message-me.html"> Message Me </a><br>
+                        <h1>Interests</h1>
+                        <h2>Articles</h2>
+                        <a id="link" href="https://parkouredu.org/parkour-landing-kinematics/" target="_blank"> Parkour Roll </a><br>
+                        <a id="link" href="https://thecaregiverspace.org/billiards-to-cope-with-stress/" target="_blank"> Billiards </a><br>
+                        <h2>Others</h2>
+                        <a id="link" href="https://vignette.wikia.nocookie.net/meme/images/a/a0/DancingBanana.GIF/revision/latest?cb=20170301112148" target="_blank"> Favorite Meme </a><br>
+                        <p style="padding-bottom: 0.1ex;"></p>
+                    </div>
+                </th>
+                <td align="left">
+                    <div id="content"> 
+                        <h1>Introduction</h1>
+                        <p align="center">
+                            “There's no talent here, this is hard work. This is an obsession. Talent does not exist, 
+                            we are all equals as human beings. You could be anyone if you put in the time. You will 
+                            reach the top, and that's that. I am not talented. I am obsessed.” 
+                            ― Conor McGregor
+                        </p>
+                        <h2>Welcome To My Portfolio!</h2>
+                        <p> 
+                            My name is Ariel Salazar. I am currently a junior in college with computer science and 
+                            mathematics as my major and minor fields of study. While I have a huge passion for logic, 
+                            mathematics, and problem-solving, it has taken me a lot of time and effort to build the skills 
+                            that I have today.
+                            <br><br>
+                            As I approached my senior year in high school, I was highly motivated to enroll in the 
+                            only computer science course that my school offered. However, I did not get the 
+                            chance to take the course because the computer science program was small and, therefore, 
+                            the course did not run during my year. Nevertheless, I did not lose my motivation and I chose
+                            computer science as my major when I applied to college. 
+                            Although I did not have any coding experience prior to college, I learned 
+                            a lot during my freshman year and I quickly became engaged with the field of study 
+                            overall. I invested several hours each day practicing what I learned, and I 
+                            constantly looked forward to attending the next lecture. 
+                            <br><br>
+                            As of today, computer science has become one of my hobbies rather than just an ordinary 
+                            school subject. I dedicate a lot of time to learning new things everyday and to becoming more 
+                            experienced as a programmer. I strive to always do my best, to never give up without a fight, 
+                            and to encourage other to do the same. 
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <img id="my-image"> </section>
+                    <p style="padding-bottom: 10ex;"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
 </html>
