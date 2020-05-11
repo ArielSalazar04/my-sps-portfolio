@@ -17,17 +17,17 @@
 #directory{
     background: rgb(250, 250, 250);
     width: 160px;
-    /* border: 5px solid rgb(85, 85, 155); */
     margin: 20px;
     align-content: right;
+    /* border: 5px solid rgb(85, 85, 155); */
 }
 
 #content {
     background: rgb(250, 250, 250);
     width: 750px;
-    /* border: 5px solid rgb(85, 85, 155); */
     margin: 20px;
     align-content: left;
+    /* border: 5px solid rgb(85, 85, 155); */
 }
 
 #my-image{
@@ -35,6 +35,8 @@
     height:375px;
     width:235px;
     margin: 20px;
+    border-style: solid;
+    box-shadow: 15px 20px 18px #888888;
     /* border: 5px solid rgb(85, 85, 155); */
 }
 
@@ -49,7 +51,7 @@
 }
 
 .column {
-    height: 800px;
+    height: 650px;
 }
 
 .row:after {
