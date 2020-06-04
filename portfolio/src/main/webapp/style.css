@@ -1,8 +1,86 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
+#background {
+    background: rgb(250, 250, 250);
+    width: 1175px;
+    border: 15px solid rgb(85, 85, 155);
+    padding: 50px;
+    margin: 20px;
+    align-content: center;
+    border-radius: 10px;
 }
+
+#main-header{
+    font-size: 36pt;
+    text-decoration: underline;
+    text-indent: 70px;
+}
+
+#directory{
+    background: rgb(250, 250, 250);
+    width: 160px;
+    margin: 20px;
+    align-content: right;
+    /* border: 5px solid rgb(85, 85, 155); */
+}
+
+#content {
+    background: rgb(250, 250, 250);
+    width: 675px;
+    margin: 25px;
+    align-content: left;
+    /* border: 5px solid rgb(85, 85, 155); */
+}
+
+#my-image{
+    content:url("/images/self_image.jpg");
+    height: 325px;
+    width: 200px;
+    margin: 40px;
+    border-style: none;
+    box-shadow: 15px 20px 18px #888888;
+    align-content: right;
+
+    /* border: 5px solid rgb(85, 85, 155); */
+}
+
+.div-wrapper {
+    position: relative;
+    height: 460px;
+    width: 400px;
+}
+
+.div-wrapper img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#link{
+    font-size: 14pt;
+}
+
+#input-box{
+    width: 675px;
+    height: 200px;
+    resize: none;
+    font-size: 14pt;
+    font-family: "Arial";
+}
+
+.column {        
+    height: 650px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 #greeting-container {
   margin-top: 20px;
@@ -22,10 +100,7 @@
     display: flex;
     justify-content: space-between;
 }
-h1 {
-    border-bottom: 5px solid black;
-    font-size: 300%;
-}
+
 section{
     font-style: bold;
     font-size: x-large;
@@ -36,35 +111,6 @@ table, th, td {
   border-spacing: 10px;
 }
 
-div.paragraph {
-  text-indent: 50px;
-}
-p, li{
+p {
     line-height: 1.75;  
-}
-img {
-  float: right;
-  border: 1px dotted black;
-  margin: 0px 0px 15px 20px;
-}
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
-}
-textarea {
-    width: 400px;
-    height: 100px;
-    font-size: 1em;
-}
-one-comment, option{
-    font-size: 12pt;
-}
-languages {
-    font-size: 1.2em;
-}
-right-side {
-    float: right;  
-    width: 400px;
 }

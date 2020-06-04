@@ -35,6 +35,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import java.util.Enumeration;
 
@@ -76,16 +78,19 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     String text = getParameter(request, "text-input", "");
-    long id = numberOfComments + 1;
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
+    Date date = new Date(System.currentTimeMillis());
+    
+    String date_time = formatter.format(date);
 
     Entity textEntity = new Entity("Comment");
-    textEntity.setProperty("id", id);
     textEntity.setProperty("text", text);
-
+    textEntity.setProperty("dateTime", date_time);
+    
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(textEntity);
 
-    response.sendRedirect("/index.html");
+    response.sendRedirect("/message-me.html");
   }
   private String getParameter(HttpServletRequest request, String name, String defaultValue) {
     String value = request.getParameter(name);

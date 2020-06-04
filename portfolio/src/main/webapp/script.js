@@ -15,11 +15,6 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
-  const quotes = ["/images/quote1.jpg", "/images/quote2.png", "/images/quote3.jpg"];
-  document.getElementById("myImage").src = quotes[Math.floor(Math.random() * quotes.length)];
-  // Picks a random quote and adds it to the page
-}
 
 function getComments(languageCode="en") {
     const params = new URLSearchParams();
@@ -50,7 +45,7 @@ function newComment(comment) {
 }
 
 function createListElement(text) {
-  const liElement = document.createElement("li");
-  liElement.innerText = text;
-  return liElement;
+    const liElement = document.createElement("li");
+    liElement.innerText = text;
+    return liElement;
 }
